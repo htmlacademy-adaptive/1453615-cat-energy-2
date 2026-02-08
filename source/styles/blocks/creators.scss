@@ -1,0 +1,46 @@
+.creators {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  color: $text-color-main;
+  text-decoration: none;
+
+  @media (width >= #{$tablet-width}) {
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    background-color: $bg-color-accent;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus::after {
+      background-color: $bg-color-accent;
+    }
+  }
+
+  &::after {
+    content: "";
+
+    display: block;
+    width: 27px;
+    height: 34px;
+    margin-left: 22px;
+
+    background-color: currentColor;
+    mask: url("../../icons/stack.svg#logo-academy") no-repeat center / cover;
+  }
+}
+
+.creators__text {
+  font-size: 16px;
+  line-height: 20px;
+}

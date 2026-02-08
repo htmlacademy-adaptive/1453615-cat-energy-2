@@ -1,0 +1,57 @@
+.button {
+  display: block;
+  padding: 10px 20px;
+  border: none;
+
+  font-family: $accent-font;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $text-color-contrast;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+
+  background-color: $bg-color-accent;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $bg-color-accent-bright;
+  }
+
+  &:active {
+    color: rgba($text-color-contrast, 0.3);
+
+    background-color: $bg-color-accent-bright;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      background-color: $bg-color-accent-bright;
+    }
+  }
+
+  &--secondary {
+    color: $text-color-main;
+    background-color: $bg-color-lighten;
+
+    &:hover,
+    &:focus-visible {
+      background-color: $bg-color-light;
+    }
+
+    &:active {
+      color: rgba($text-color-main, 0.3);
+
+      background-color: $bg-color-light;
+    }
+
+    @supports not selector(:focus-visible) {
+      &:focus {
+        background-color: $bg-color-light;
+      }
+    }
+  }
+}

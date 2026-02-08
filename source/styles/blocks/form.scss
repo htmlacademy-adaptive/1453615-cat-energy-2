@@ -1,0 +1,23 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 56px;
+  gap: 14px;
+  align-items: stretch;
+
+  @media (width >= #{$tablet-width}) {
+    grid-template-columns: 59.5% 1fr;
+    gap: 0;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    grid-template-columns: 66% 1fr;
+  }
+}
+
+.form__submit {
+  min-height: 56px;
+
+  font-size: 20px;
+  line-height: 26px;
+}

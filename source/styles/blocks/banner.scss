@@ -1,0 +1,188 @@
+.banner {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-top: 27px;
+
+  font-family: $accent-font;
+  font-weight: 400;
+  text-align: center;
+  color: $text-color-contrast;
+
+  @media (width < #{$tablet-width}) {
+    --gradient-part: 37%;
+
+    background-image:
+      linear-gradient(
+        to top,
+        $bg-color-main var(--gradient-part),
+        rgba($bg-color-accent, 0.85) var(--gradient-part)
+      ),
+      image-set(
+        url("../../images/bg-banner-mobile@2x.webp") 2dppx type("image/webp"),
+        url("../../images/bg-banner-mobile@1x.webp") 1dppx type("image/webp"),
+        url("../../images/bg-banner-mobile@2x.jpg") 2dppx,
+        url("../../images/bg-banner-mobile@1x.jpg") 1dppx
+      ),
+      linear-gradient(
+        to top,
+        $bg-color-main var(--gradient-part),
+        #504f55 var(--gradient-part)
+      );
+    background-position: center top, center top;
+    background-size: 100%, auto 60.4%;
+    background-repeat: no-repeat;
+  }
+
+  @media (width >= #{$tablet-width}) {
+    position: relative;
+
+    padding-top: 65px;
+    padding-bottom: 526px;
+
+    color: $text-color-accent;
+    text-align: left;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    position: static;
+
+    grid-template-columns: 416px 1fr;
+    padding-top: 7px;
+    padding-bottom: 0;
+    padding-left: 80px;
+  }
+
+  &::before {
+    @media (width >= #{$desktop-width}) {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: -1;
+
+      width: 50%;
+      height: 694px;
+
+      background-image:
+        linear-gradient(rgba($bg-color-accent, 0.85)),
+        image-set(
+          url("../../images/bg-banner-desktop@2x.webp") 2dppx type("image/webp"),
+          url("../../images/bg-banner-desktop@1x.webp") 1dppx type("image/webp"),
+          url("../../images/bg-banner-desktop@2x.jpg") 2dppx,
+          url("../../images/bg-banner-desktop@1x.jpg") 1dppx
+        ),
+        linear-gradient(#504f55);
+      background-position: left bottom;
+      background-size: 100%, cover, 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.banner__picture {
+  display: grid;
+  justify-content: center;
+
+  @media (width >= $desktop-width) {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    place-self: center start;
+    margin-left: -48px;
+
+    transform: none;
+  }
+}
+
+.banner__image {
+  display: block;
+
+  @media (width >= #{$tablet-width}) {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: -1;
+
+    transform: translateX(-50%);
+  }
+
+  @media (width >= $desktop-width) {
+    position: static;
+
+    width: auto;
+
+    text-align: left;
+    transform: none;
+  }
+}
+
+.banner__title {
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  font-weight: inherit;
+  font-size: 36px;
+  line-height: 36px;
+  color: inherit;
+
+  @media (width >= $tablet-width) {
+    margin-bottom: 41px;
+  }
+
+  @media (#{$tablet-width} <= width < #{$desktop-width}) {
+    margin-left: 90px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    padding-top: 82px;
+    grid-column: 1;
+  }
+}
+
+.banner__text {
+  margin-top: 0;
+  margin-bottom: 29px;
+
+  font-weight: inherit;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  @media (width >= $tablet-width) {
+    margin-bottom: 49px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @media (#{$tablet-width} <= width < #{$desktop-width}) {
+    margin-left: 90px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    grid-column: 1;
+  }
+}
+
+.banner__action {
+  width: 100%;
+  margin-top: 3px;
+
+  @media (width >= #{$tablet-width}) {
+    grid-row: 4;
+    width: 242px;
+    margin-top: 0;
+    margin-left: 90px;
+    padding: 14px 20px;
+
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    grid-column: 1;
+    grid-row: auto;
+    place-self: start;
+    margin: 0;
+  }
+}

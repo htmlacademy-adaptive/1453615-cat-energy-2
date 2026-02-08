@@ -1,0 +1,61 @@
+.subscribe {
+  padding-bottom: 40px;
+
+  @media (width >= #{$tablet-width}) {
+    padding-bottom: 80px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    padding-bottom: 104px;
+  }
+}
+
+.subscribe__title {
+  margin-block: 0 33px;
+
+  @media (width >= #{$tablet-width}) {
+    margin-block: 0 66px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    margin-block: 0 72px;
+  }
+}
+
+.subscribe__text {
+  margin-block: 0 24px;
+
+  font-family: $accent-font;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $text-color-accent;
+  text-align: center;
+
+  @media (width >= #{$tablet-width}) {
+    max-width: 632px;
+    margin-inline: auto;
+
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    max-width: 752px;
+    margin-inline: auto;
+  }
+}
+
+.subscribe__form {
+  width: 100%;
+
+  @media (width >= #{$tablet-width}) {
+    max-width: 632px;
+    margin-inline: auto;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    max-width: 752px;
+    margin-inline: auto;
+  }
+}

@@ -1,0 +1,22 @@
+.modules {
+  background-color: $bg-color-main;
+}
+
+.modules__list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+
+  list-style-type: none;
+
+  @media (width >= #{$tablet-width}) {
+    row-gap: 30px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+  }
+}

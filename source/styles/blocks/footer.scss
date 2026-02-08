@@ -1,0 +1,27 @@
+.footer {
+  padding-block: 40px;
+
+  background-color: $bg-color-lighten;
+
+  @media (width >= #{$tablet-width}) {
+    padding-block: 45px 40px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    padding-block: 54px;
+  }
+}
+
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 20px;
+
+  @media (width >= #{$tablet-width}) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: center;
+    gap: 20px;
+  }
+}

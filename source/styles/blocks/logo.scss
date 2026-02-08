@@ -1,0 +1,121 @@
+.logo {
+  display: grid;
+  text-decoration: none;
+  outline: none;
+
+  &[aria-current="page"] {
+    pointer-events: none;
+  }
+
+  &--main {
+    grid-template-columns: 1fr 101px 1fr;
+    align-items: center;
+    padding: 12px 20px 16px;
+
+    @media (width >= #{$tablet-width}) {
+      padding: 0;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: 50px;
+      align-items: center;
+      gap: 13px;
+    }
+
+    @media (width >= #{$desktop-width}) {
+      grid-template-rows: 59px;
+      gap: 13px;
+      width: 202px;
+      height: 60px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+
+    @supports not selector(:focus-visible) {
+      &:focus {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &--footer {
+    --mask-position: center;
+
+    grid-template-columns: 1fr;
+    padding: 0;
+
+    @supports not selector(:focus-visible) {
+      &:focus::before {
+        background-color: #3e3e3e;
+      }
+    }
+
+    @media (width >= #{$tablet-width}) {
+      --mask-position: start;
+
+      justify-content: flex-start;
+      padding: 0;
+
+      text-align: left;
+    }
+
+    &::before {
+      content: "";
+
+      display: block;
+      justify-self: var(--mask-position);
+      width: 128px;
+      height: 24px;
+
+      background-color: #111111;
+      mask: url("../../images/logo-text-additional.svg") no-repeat center / contain;
+    }
+
+    &:hover::before,
+    &:focus-visible::before {
+      background-color: #3e3e3e;
+    }
+
+    &:active::before {
+      background-color: #6b6b6b;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.logo__image {
+  justify-self: start;
+  display: block;
+
+  @media (width >= #{$tablet-width}) {
+    justify-self: none;
+    width: 60px;
+    height: 50px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    width: 70px;
+    height: 59px;
+  }
+}
+
+.logo__text {
+  display: block;
+
+  @media (width >= #{$desktop-width}) {
+    width: 118px;
+    height: 21px;
+  }
+}

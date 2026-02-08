@@ -1,0 +1,15 @@
+.catalog-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (width >= #{$tablet-width}) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 73px 80px;
+  }
+}

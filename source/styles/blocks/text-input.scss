@@ -1,0 +1,50 @@
+.text-input {
+  position: relative;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+
+  font-family: $accent-font;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: $text-color-main;
+
+  @media (width >= #{$tablet-width}) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.text-input__field {
+  width: 100%;
+  margin: 0;
+  padding: 11px 13px;
+  border: none;
+
+  font: inherit;
+  text-transform: uppercase;
+
+  background-color: $bg-color-main;
+  box-shadow: inset 0 0 0 1px $border-color-lighten;
+
+  @media (width >= #{$tablet-width}) {
+    padding: 11px 13px;
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $border-color-darken;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 2px $border-color-black;
+    outline: none;
+  }
+
+  &--error,
+  &:invalid {
+    box-shadow: inset 0 0 0 2px $border-color-alert;
+  }
+}

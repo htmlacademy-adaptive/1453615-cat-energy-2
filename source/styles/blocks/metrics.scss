@@ -1,0 +1,23 @@
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 19px 34px;
+
+  @media (width >= #{$tablet-width}) {
+    grid-template-columns: 162px 162px 1fr;
+    column-gap: 42px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    grid-template-columns: repeat(2, 162px);
+    row-gap: 60px;
+  }
+}
+
+.metrics__item:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+
+  @media (#{$tablet-width} <= width < #{$desktop-width}) {
+    grid-column: auto;
+  }
+}

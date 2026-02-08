@@ -1,0 +1,67 @@
+.promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 290px;
+  padding: 58px 61px 43px 58px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $text-color-contrast;
+  text-decoration: none;
+  text-align: center;
+
+  background-color: $bg-color-accent;
+  background-image:
+    image-set(
+      url("../../images/gift-mobile@2x.webp") 2dppx type("image/webp"),
+      url("../../images/gift-mobile@1x.webp") 1dppx type("image/webp"),
+      url("../../images/gift-mobile@2x.jpg") 2dppx,
+      url("../../images/gift-mobile@1x.jpg") 1dppx
+    );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (width >= #{$tablet-width}) {
+    flex-direction: row;
+    min-height: 200px;
+    padding: 57px 124px 60px 77px;
+  }
+
+  @media (#{$tablet-width} <= width < #{$desktop-width}) {
+    column-gap: 264px;
+
+    text-align: left;
+    background-image:
+      image-set(
+        url("../../images/gift-tablet@2x.webp") 2dppx type("image/webp"),
+        url("../../images/gift-tablet@1x.webp") 1dppx type("image/webp"),
+        url("../../images/gift-tablet@2x.jpg") 2dppx,
+        url("../../images/gift-tablet@1x.jpg") 1dppx
+      );
+  }
+
+  @media (width >= #{$desktop-width}) {
+    flex-direction: column;
+    padding: 55px 40px 40px;
+
+    background-position: right center;
+  }
+
+  &::before {
+    content: "";
+
+    flex-shrink: 0;
+    display: block;
+    width: 80px;
+    height: 80px;
+
+    background-image: url("../../icons/stack.svg#gift");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

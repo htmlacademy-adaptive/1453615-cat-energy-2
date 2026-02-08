@@ -1,0 +1,221 @@
+.card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 24px 20px 0;
+
+  background-color: $bg-color-lighten;
+
+  @media (width >= #{$tablet-width}) {
+    min-height: 372px;
+    padding: 77px 316px 20px 53px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    padding: 47px 50px 37px 52px;
+  }
+}
+
+.card__title {
+  position: relative;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin: 0 0 22px;
+  font-family: $accent-font;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 37px;
+  text-transform: uppercase;
+  color: $text-color-accent;
+
+  @media (#{$tablet-width} <= width < #{$desktop-width}) {
+    position: static;
+  }
+
+  @media (width >= #{$tablet-width}) {
+    margin-bottom: 25px;
+
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    margin-bottom: 40px;
+  }
+
+  &::before {
+    --module-card-icon-size: 50px;
+
+    content: "";
+
+    flex-shrink: 1;
+    display: block;
+    width: var(--module-card-icon-size);
+    height: var(--module-card-icon-size);
+    margin-right: 18px;
+    border-radius: 50%;
+
+    background-color: $bg-color-accent;
+
+    @media (#{$tablet-width} <= width < #{$desktop-width}) {
+      --module-card-icon-size: 200px;
+
+      position: absolute;
+      top: 90px;
+      right: 62px;
+
+      margin-right: 0;
+    }
+
+    @media (width >= #{$desktop-width}) {
+      --module-card-icon-size: 100px;
+
+      margin-right: 62px;
+    }
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    display: block;
+
+    background: $text-color-accent;
+    mask: var(--module-icon) no-repeat center / cover;
+  }
+
+  &--slim::after {
+    --module-icon: url("../../icons/stack.svg#cat-slim");
+
+    top: -3px;
+    left: 7px;
+
+    width: 36px;
+    height: 50px;
+
+    @media (#{$tablet-width} <= width < #{$desktop-width}) {
+      top: 81px;
+      right: 92px;
+      left: initial;
+
+      width: 140px;
+      height: 194px;
+    }
+
+    @media (width >= #{$desktop-width}) {
+      top: -6px;
+      left: 15px;
+
+      width: 70px;
+      height: 97px;
+    }
+  }
+
+  &--pro::after {
+    --module-icon: url("../../icons/stack.svg#cat-pro");
+
+    top: 11px;
+    left: -10px;
+
+    width: 67px;
+    height: 28px;
+
+    @media (#{$tablet-width} <= width < #{$desktop-width}) {
+      top: 135px;
+      right: 28px;
+      left: initial;
+
+      width: 268px;
+      height: 112px;
+    }
+
+    @media (width >= #{$desktop-width}) {
+      top: 20px;
+      left: -19px;
+
+      width: 134px;
+      height: 56px;
+    }
+  }
+}
+
+.card__text {
+  margin: 0 0 22px;
+
+  font-family: $main-font;
+  color: $text-color-main;
+
+  @media (#{$tablet-width} <= width < #{$desktop-width}) {
+    margin-bottom: 33px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    margin-bottom: 7px;
+  }
+}
+
+.card__link {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 19px 0 22px;
+  border-top: 1px solid $border-color-dark;
+
+  font-family: $accent-font;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $text-color-accent;
+
+  transition: 0.08s linear all;
+  outline: none;
+
+  @media (width >= #{$tablet-width}) {
+    border-top: none;
+
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &::after {
+    content: "";
+
+    display: block;
+    width: 32px;
+    height: 11px;
+    margin-left: 15px;
+
+    background: $text-color-accent;
+    mask: url("../../icons/stack.svg#arrow") no-repeat -8px center / 32px 11px;
+    transition: 0.08s linear all;
+
+    @media (width >= #{$tablet-width}) {
+      margin-left: 25px;
+    }
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    mask-position: 0 center;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus::after {
+      mask-position: 0 center;
+    }
+  }
+}

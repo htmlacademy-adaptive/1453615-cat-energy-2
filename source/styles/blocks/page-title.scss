@@ -1,0 +1,20 @@
+.page-title {
+  padding-top: 28px;
+
+  font-family: $accent-font;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 400;
+  color: $text-color-accent;
+
+  @media (width >= #{$tablet-width}) {
+    padding-top: 65px;
+
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (width >= #{$desktop-width}) {
+    padding-top: 53px;
+  }
+}
