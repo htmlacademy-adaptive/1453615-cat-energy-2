@@ -7,6 +7,7 @@
 
   @media (width >= #{$tablet-width}) {
     grid-template-columns: 59.5% 1fr;
+    grid-template-rows: minmax(56px, auto);
     gap: 0;
   }
 

@@ -13,7 +13,8 @@
 }
 
 .parameters-list__item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 50%;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -54,4 +55,13 @@
       bottom: -8px;
     }
   }
+}
+
+.parameters-list__name {
+  text-align: left;
+}
+
+.parameters-list__value {
+  margin: 0;
+  text-align: right;
 }
