@@ -15,7 +15,7 @@
   }
 
   @media (width >= #{$desktop-width}) {
-    padding: 77px 50px 37px 52px;
+    padding: 77px 50px 59px 52px;
   }
 
   &::before {
@@ -147,7 +147,7 @@
 .card__text {
   position: relative;
 
-  margin: 0 0 22px;
+  margin: 0;
 
   font-family: $main-font;
   color: $text-color-main;
@@ -157,7 +157,7 @@
   }
 
   &:last-of-type {
-    margin-bottom: 42px;
+    margin-bottom: 41px;
   }
 
   @media (width < #{$tablet-width}) {
@@ -177,11 +177,15 @@
   }
 
   @media (#{$tablet-width} <= width < #{$desktop-width}) {
-    margin-bottom: 33px;
+    &:last-of-type {
+      margin-bottom: 51px;
+    }
   }
 
   @media (width >= #{$desktop-width}) {
-    margin-bottom: 7px;
+    &:last-of-type {
+      margin-bottom: 26px;
+    }
   }
 }
 
@@ -204,15 +208,24 @@
   transition: 0.08s linear all;
   outline: none;
 
+  &:focus-visible {
+    outline: 2px solid $text-color-accent;
+    outline-offset: 2px;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: 2px solid $text-color-accent;
+      outline-offset: 2px;
+    }
+  }
+
   @media (width >= #{$tablet-width}) {
+    gap: 25px;
     border-top: none;
 
     font-size: 20px;
     line-height: 30px;
-  }
-
-  @media (width >= #{$desktop-width}) {
-    gap: 25px;
   }
 
   &:active {

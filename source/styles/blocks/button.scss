@@ -16,8 +16,7 @@
   cursor: pointer;
   outline: none;
 
-  &:hover,
-  &:focus-visible {
+  &:hover {
     background-color: $bg-color-accent-bright;
   }
 
@@ -25,6 +24,18 @@
     color: rgba($text-color-contrast, 0.3);
 
     background-color: $bg-color-accent-bright;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $text-color-accent;
+    outline-offset: 2px;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: 2px solid $text-color-accent;
+      outline-offset: 2px;
+    }
   }
 
   @supports not selector(:focus-visible) {
@@ -37,8 +48,7 @@
     color: $text-color-main;
     background-color: $bg-color-lighten;
 
-    &:hover,
-    &:focus-visible {
+    &:hover {
       background-color: $bg-color-light;
     }
 
@@ -46,12 +56,6 @@
       color: rgba($text-color-main, 0.3);
 
       background-color: $bg-color-light;
-    }
-
-    @supports not selector(:focus-visible) {
-      &:focus {
-        background-color: $bg-color-light;
-      }
     }
   }
 }

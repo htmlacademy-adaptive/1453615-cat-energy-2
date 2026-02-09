@@ -170,12 +170,25 @@
   margin-right: 20px;
   border-radius: 0;
   border: none;
+  outline: none;
 
   background-color: $bg-color-main;
   cursor: pointer;
 
   @media (width >= #{$tablet-width}) {
     display: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $text-color-accent;
+    outline-offset: 2px;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: 2px solid $text-color-accent;
+      outline-offset: 2px;
+    }
   }
 
   &::before {

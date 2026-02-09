@@ -8,13 +8,21 @@
 
   transform: translateX(-50%);
   border-radius: 2px;
+  outline: none;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     --thumb-color: #{$bg-color-accent};
   }
 
   &:active {
     opacity: 0.6;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      --thumb-color: #{$bg-color-accent};
+    }
   }
 
   &::before,
@@ -41,6 +49,6 @@
     background-color: var(--thumb-color);
     mask: url("../../icons/stack.svg#arrows-left-right") no-repeat center / 24px 18px;
 
-    cursor: e-resize;
+    cursor: grab;
   }
 }

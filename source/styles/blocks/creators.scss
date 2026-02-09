@@ -6,6 +6,7 @@
 
   color: $text-color-main;
   text-decoration: none;
+  outline: none;
 
   @media (width >= #{$tablet-width}) {
     justify-content: flex-end;

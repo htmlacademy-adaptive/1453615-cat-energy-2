@@ -1,4 +1,6 @@
 .result {
+  --bg-gradient-offset: 462px;
+
   padding-top: 25px;
   padding-bottom: 40px;
 
@@ -9,7 +11,7 @@
     padding-bottom: 101px;
 
     background-color: $bg-color-main;
-    background-image: linear-gradient(to top, #{$bg-color-dark} 0, #{$bg-color-dark} 462px, #{$bg-color-main} 462px, #{$bg-color-main} 100%);
+    background-image: linear-gradient(to top, #{$bg-color-dark} 462px, #{$bg-color-main} 462px);
     background-position: center bottom;
     background-size: contain;
     background-repeat: no-repeat;
@@ -17,6 +19,8 @@
 
   @media (width >= #{$desktop-width}) {
     padding-bottom: 73px;
+
+    background-image: linear-gradient(to bottom, #{$bg-color-main} 178px, #{$bg-color-dark} 178px);
   }
 }
 
